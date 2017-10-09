@@ -13,3 +13,4 @@
 
 Route::get('/', 'DataEntryController@index');
 Route::post('submit', 'DataEntryController@submit');
+Route::get('return', 'DataEntryController@index');

@@ -26,8 +26,8 @@
 
 <div class="container">
     <div class="row">
-        <div class="col push-l2 push-m2 l8 m8 s12">
-            <div class="card col push-l1 push-m1 l8 m8 s12">
+        <div class="col push-l2 push-m1 l8 m10 s12">
+            <div class="card col push-l1 push-m1 l8 m10 s12">
                 <div class="row">
 
                     <form class="col push-l1 push-m1 l10 m10 s12" method="post" action="submit">
@@ -52,9 +52,29 @@
                         <div class="row">
                             <div class="input-field">
 
-                                <input placeholder="Placeholder" id="birthyear" name="birthyear" type="number" class="validate">
-                                <label for="birthyear">Year of Birth</label>
+                                <input type="text" class="datepicker validate" id="birthdate" name="birthdate">
+                                <label for="birthyear">Date of Birth</label>
 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col l5 m5 push-l1 push-m1 s12">
+                                <select name="origin" id="origin">
+                                    <option value="0" disabled selected>Choose your origin</option>
+                                    <option value="1">Manila</option>
+                                    <option value="2">Boracay</option>
+                                    <option value="3">Cebu</option>
+                                </select>
+                                <label>City of Origin</label>
+                            </div>
+                            <div class="input-field col l5 m5 push-l1 push-m1 s12">
+                                <select name="dest" id="dest">
+                                    <option value="0" disabled selected>Choose your destination</option>
+                                    <option value="1">Manila</option>
+                                    <option value="2">Boracay</option>
+                                    <option value="3">Cebu</option>
+                                </select>
+                                <label>City of Destination</label>
                             </div>
                         </div>
                         <div class="row">
@@ -90,5 +110,18 @@
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+    });
+</script>
 </body>
 </html>

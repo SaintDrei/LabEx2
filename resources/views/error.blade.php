@@ -18,7 +18,7 @@
     echo "
     <script>
     $(document).ready(function(){
-        Materialize.Toast('Welcome $name!', 5000);
+        Materialize.Toast('Sorry! There seems to be a problem.', 5000);
 
 
     });
@@ -43,51 +43,27 @@
         </div>
     </nav>
 </div>
-<div class="row">
-    <div class="col s12 l8 m8  push-l2 push-m2">
-        <div class="card">
-            <div class="card-image">
-                    <img src="{{$locimg}}">
-                <span class="card-title">Awyiss!</span>
-            </div>
-            <div class="card-content">
-                <table class="striped">
-                    <tbody>
-                    <tr>
-                        <td>Name</td>
-                        <td>{{$name}}</td>
 
-                    </tr>
-                    <tr>
-                        <td>Date of Birth</td>
-                        <td>{{$birthdate}}</td>
+<div class="container">
+    <div class="row">
+        <div class="col l8 push-l2">
 
-                    </tr>
-                    <tr>
-                        <td>Age</td>
-                        <td>$7.00</td>
-                    </tr>
-                    <tr>
-                        <td>City of Origin</td>
-                        <td>{{$origin}}</td>
-                    </tr>
-                    <tr>
-                        <td>City of Destination</td>
-                        <td>{{$destination}}</td>
-                    </tr>
-                    <tr>
-                        <td><bold>Fare</bold></td>
-                        <td><bold>{{$fare}}</bold></td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="card col l8 push-l2">
+                <h2 class="red darken-4">Error!</h2>
+                <div class="row">
+                <h3>{{$customerror}}</h3>
+                </div>
+                <div class="row">
+                    <form method="get" action="return">
+                            {{csrf_field()}}
+                        <button class="btn cyan waves-effect waves-light right" style="margin-right:2em;" type="submit" onclick="Materialize.toast('Submitted!', 4000)" name="login"><i class="material-icons left">cached</i>Return!</button>
+                    </form>
 
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 
 <div class="fixed-action-btn click-to-toggle" style="bottom: 45px; right: 24px;">
