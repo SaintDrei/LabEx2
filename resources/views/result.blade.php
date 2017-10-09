@@ -65,7 +65,7 @@
                     </tr>
                     <tr>
                         <td>Age</td>
-                        <td>$7.00</td>
+                        <td>{{$age}}</td>
                     </tr>
                     <tr>
                         <td>City of Origin</td>
@@ -82,9 +82,6 @@
                     </tbody>
                 </table>
 
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
             </div>
         </div>
     </div>

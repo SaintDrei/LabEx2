@@ -18,8 +18,8 @@ class DataEntryController extends Controller
         $birthdate = $request->input('birthdate');
         $org = $request->input('origin');
         $dest = $request->input('dest');
-        $fare = '$23.52';
-        $age = date('Y') - $request->input('birthdate');
+
+        $age = date('Y') - $newstring = substr($birthdate, -4);
         $locimg = 'http://static.islandhoppinginthephilippines.com/2015/02/manila-philippines-facebook-cover.jpg';
         if ($fname == ""){
             return view('error', ['customerror' => 'First Name is empty']);
@@ -65,7 +65,7 @@ class DataEntryController extends Controller
                 $locimg="http://static.islandhoppinginthephilippines.com/2015/02/manila-philippines-facebook-cover.jpg";
                 $fare = "₱ 2,000.00";
             }
-            return view('result', ['name' => $name, 'birthdate' => $birthdate, 'origin' => $origin, 'destination' => $destination, 'fare' => $fare, 'locimg' => $locimg]);
+            return view('result', ['name' => $name, 'birthdate' => $birthdate, 'origin' => $origin, 'destination' => $destination, 'fare' => $fare, 'locimg' => $locimg, 'age' => $age]);
         }
 
 //        return view('result', ['fullname' => $fname . ' ' . $lname, 'age'=>$age]);
